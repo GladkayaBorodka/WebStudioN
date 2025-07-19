@@ -1,4 +1,4 @@
-/* Общие стили и переменные (можно вынести в отдельный файл) */
+/* Общие стили и переменные */
 :root {
     --primary-text-color: #212121;
     --secondary-text-color: #757575;
@@ -90,6 +90,7 @@ img {
     gap: 50px;
 }
 .header-nav-link {
+    position: relative;
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
@@ -104,15 +105,32 @@ img {
 .header-nav-link:focus {
     color: var(--accent-color);
 }
+.header-nav-link.current {
+    color: var(--accent-color);
+}
+.header-nav-link.current::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
 
 .header-contact {
     margin-left: auto;
 }
 .header-contact-list {
     display: flex;
-    gap: 50px;
+    gap: 30px;
+    align-items: center;
 }
 .header-contact-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -124,9 +142,13 @@ img {
 .header-contact-link:focus {
     color: var(--accent-color);
 }
+.header-contact-link .fa-solid {
+    fill: currentColor;
+}
+
 
 /* --- PORTFOLIO FILTERS --- */
-.filters-list {
+.filters {
     display: flex;
     justify-content: center;
     gap: 8px;
@@ -164,19 +186,43 @@ img {
 .portfolio-item {
     flex-basis: calc((100% - 60px) / 3);
 }
-.portfolio-link {
+.portfolio-item-link {
     display: block;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio-link:hover,
-.portfolio-link:focus {
+.portfolio-item-link:hover,
+.portfolio-item-link:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.portfolio-image {
-    width: 370px;
-    height: 300px;
+.portfolio-item-link:hover .portfolio-item-overlay,
+.portfolio-item-link:focus .portfolio-item-overlay {
+    transform: translateY(0);
 }
-.portfolio-item-caption {
+
+.portfolio-item-thumb {
+    position: relative;
+    overflow: hidden;
+    width: 370px;
+    height: 404px;
+}
+.portfolio-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 63px 24px;
+    background-color: rgba(33, 150, 243, 0.9);
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-item-overlay-text {
+    font-size: 18px;
+    line-height: 1.56;
+    color: var(--white-color);
+    margin: 0;
+}
+.portfolio-item-description {
     padding: 20px 24px;
     border: 1px solid #EEEEEE;
     border-top: none;
@@ -196,6 +242,7 @@ img {
     color: var(--secondary-text-color);
 }
 
+
 /* --- FOOTER --- */
 .footer {
     background-color: var(--dark-bg-color);
@@ -212,8 +259,10 @@ img {
     display: inline-block;
     margin-bottom: 20px;
 }
-.footer-address p {
+.footer-list {
     font-style: normal;
+}
+.footer-address-location {
     font-size: 14px;
     line-height: 1.71;
     color: var(--white-color);
@@ -223,7 +272,6 @@ img {
     margin-bottom: 9px;
 }
 .footer-link {
-    font-style: normal;
     font-size: 14px;
     line-height: 1.71;
     color: rgba(255, 255, 255, 0.6);
@@ -232,6 +280,9 @@ img {
 .footer-link:hover,
 .footer-link:focus {
     color: var(--accent-color);
+}
+.footer-social-block {
+    margin-right: 93px;
 }
 .footer-social-title {
     margin: 0 0 20px;
@@ -253,17 +304,67 @@ img {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    fill: var(--icon-color);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.fa-brands {
     color: var(--icon-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social-link:hover,
+.social-link:focus {
+    background-color: var(--accent-color);
+    color: var(--white-color);
 }
 .footer-social-link {
     background-color: rgba(255, 255, 255, 0.1);
-    fill: var(--white-color);
+    color: var(--white-color);
 }
-.footer-social-link:hover,
-.footer-social-link:focus {
+.footer-subscribe-title {
+    margin: 0 0 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--white-color);
+}
+.footer-form {
+    display: flex;
+    gap: 12px;
+}
+.footer-form-input {
+    width: 358px;
+    height: 50px;
+    padding: 15px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--white-color);
+    font-size: 16px;
+}
+.footer-form-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+.footer-form-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    color: var(--white-color);
     background-color: var(--accent-color);
+    border: none;
+    border-radius: 4px;
+    padding: 10px 28px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-form-button:hover,
+.footer-form-button:focus {
+    background-color: #188CE8;
+}
+.footer-form-icon {
+    fill: currentColor;
 }

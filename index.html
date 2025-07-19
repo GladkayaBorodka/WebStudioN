@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="body">
@@ -18,15 +19,15 @@
         </a>
         <nav class="header-nav">
             <ul class="header-nav-list">
-                <li class="header-nav-item"><a href="index.html" class="header-nav-link">Студія</a></li>
+                <li class="header-nav-item"><a href="index.html" class="header-nav-link current">Студія</a></li>
                 <li class="header-nav-item"><a href="portfolio.html" class="header-nav-link">Портфоліо</a></li>
                 <li class="header-nav-item"><a href="#contacts" class="header-nav-link">Контакти</a></li>
             </ul>
         </nav>
         <address class="header-contact">
             <ul class="header-contact-list">
-                <li class="header-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:info@devstudio.com" class="header-contact-link">info@devstudio.com</a></li>
-                <li class="header-contact-item"><i class="fa-solid fa-mobile-screen"></i><a href="tel:+380961111111" class="header-contact-link">+38 096 111 11 11</a></li>
+                <li class="header-contact-item"><a href="mailto:info@devstudio.com" class="header-contact-link"><i class="fa-solid fa-envelope"></i>info@devstudio.com</a></li>
+                <li class="header-contact-item"><a href="tel:+380961111111" class="header-contact-link"><i class="fa-solid fa-mobile-screen"></i>+38 096 111 11 11</a></li>
             </ul>
         </address>
     </div>
@@ -36,7 +37,7 @@
     <section class="hero">
         <div class="container">
             <h1 class="hero-title">ЕФЕКТИВНІ РІШЕННЯ ДЛЯ ВАШОГО БІЗНЕСУ</h1>
-            <button type="button" class="hero-button">Замовити послугу</button>
+            <button type="button" class="hero-button" data-modal-open>Замовити послугу</button>
         </div>
     </section>
 
@@ -80,9 +81,24 @@
         <div class="container">
             <h2 class="section-title">Чим ми займаємося</h2>
             <ul class="activities-list">
-                <li class="activities-item"><img src="./img/mancoding-c.jpg" alt="Десктопні додатки" class="activities-img" ></li>
-                <li class="activities-item"><img src="./img/womenscaning-c.jpg" alt="Мобільні додатки" class="activities-img" ></li>
-                <li class="activities-item"><img src="./img/choosingcolor-c.jpg" alt="Дизайнерські рішення" class="activities-img"></li>
+                <li class="activities-item">
+                    <div class="activities-item-wrapper">
+                        <img src="./img/mancoding-c.jpg" alt="Десктопні додатки" class="activities-img">
+                        <p class="activities-item-label">Десктопні додатки</p>
+                    </div>
+                </li>
+                <li class="activities-item">
+                    <div class="activities-item-wrapper">
+                        <img src="./img/womenscaning-c.jpg" alt="Мобільні додатки" class="activities-img">
+                        <p class="activities-item-label">Мобільні додатки</p>
+                    </div>
+                </li>
+                <li class="activities-item">
+                    <div class="activities-item-wrapper">
+                        <img src="./img/choosingcolor-c.jpg" alt="Дизайнерські рішення" class="activities-img">
+                        <p class="activities-item-label">Дизайнерські рішення</p>
+                    </div>
+                </li>
             </ul>
         </div>
     </section>
@@ -93,7 +109,7 @@
             <ul class="team-list">
                 <li class="team-item">
                     <img src="./img/men.jpg" alt="Ігор Дем'яненко" class="team-img" width="270">
-                    <div class="team-member-info">
+                    <div class="team-item-description">
                         <h3 class="team-name">Ігор Дем'яненко</h3>
                         <p class="team-role">Product Designer</p>
                         <ul class="social-links">
@@ -106,7 +122,7 @@
                 </li>
                 <li class="team-item">
                     <img src="./img/women.jpg" alt="Ольга Рєпіна" class="team-img" width="270">
-                    <div class="team-member-info">
+                    <div class="team-item-description">
                         <h3 class="team-name">Ольга Рєпіна</h3>
                         <p class="team-role">Frontend Developer</p>
                         <ul class="social-links">
@@ -119,7 +135,7 @@
                 </li>
                 <li class="team-item">
                     <img src="./img/mentwo.jpg" alt="Микола Тарасов" class="team-img" width="270">
-                    <div class="team-member-info">
+                    <div class="team-item-description">
                         <h3 class="team-name">Микола Тарасов</h3>
                         <p class="team-role">Marketing</p>
                         <ul class="social-links">
@@ -132,7 +148,7 @@
                 </li>
                 <li class="team-item">
                     <img src="./img/menthree.jpg" alt="Михайло Єрмаков" class="team-img" width="270">
-                    <div class="team-member-info">
+                    <div class="team-item-description">
                         <h3 class="team-name">Михайло Єрмаков</h3>
                         <p class="team-role">UI Designer</p>
                         <ul class="social-links">
@@ -151,36 +167,12 @@
         <div class="container">
             <h2 class="section-title">Постійні клієнти</h2>
             <ul class="clients-list">
-                <li class="client-item">
-                    <a href="#" class="client-link">
-                        <img src="./img/yaco.svg" alt="YA & CO" class="client-img">
-                    </a>
-                </li>
-                <li class="client-item">
-                    <a href="#" class="client-link">
-                        <img src="./img/tagline.svg" alt="Company" class="client-img">
-                    </a>
-                </li>
-                <li class="client-item">
-                    <a href="#" class="client-link">
-                        <img src="./img/company.svg" alt="Company" class="client-img">
-                    </a>
-                </li>
-                <li class="client-item">
-                    <a href="#" class="client-link">
-                        <img src="./img/fosterpeters.svg" alt="FOSTER PETERS" class="client-img">
-                    </a>
-                </li>
-                <li class="client-item">
-                    <a href="#" class="client-link">
-                        <img src="./img/brand.svg" alt="Brand" class="client-img">
-                    </a>
-                </li>
-                 <li class="client-item">
-                    <a href="#" class="client-link">
-                        <img src="./img/companytagline.svg" alt="YA & CO" class="client-img">
-                    </a>
-                </li>
+                <li class="client-item"><a href="#" class="client-link"><img src="./img/yaco.svg" alt="YA & CO" class="client-img"></a></li>
+                <li class="client-item"><a href="#" class="client-link"><img src="./img/tagline.svg" alt="Company" class="client-img"></a></li>
+                <li class="client-item"><a href="#" class="client-link"><img src="./img/company.svg" alt="Company" class="client-img"></a></li>
+                <li class="client-item"><a href="#" class="client-link"><img src="./img/fosterpeters.svg" alt="FOSTER PETERS" class="client-img"></a></li>
+                <li class="client-item"><a href="#" class="client-link"><img src="./img/brand.svg" alt="Brand" class="client-img"></a></li>
+                <li class="client-item"><a href="#" class="client-link"><img src="./img/companytagline.svg" alt="YA & CO" class="client-img"></a></li>
             </ul>
         </div>
     </section>
@@ -194,7 +186,7 @@
             </a>
             <address class="footer-address">
                 <ul class="footer-list">
-                    <li class="footer-item"><p>м. Київ, пр-т Лесі Українки, 26</p></li>
+                    <li class="footer-item"><p class="footer-address-location">м. Київ, пр-т Лесі Українки, 26</p></li>
                     <li class="footer-item"><a href="mailto:info@devstudio.com" class="footer-link">info@devstudio.com</a></li>
                     <li class="footer-item"><a href="tel:+380961111111" class="footer-link">+38 096 111 11 11</a></li>
                 </ul>
@@ -209,8 +201,67 @@
                 <li class="social-item"><a href="#" class="social-link footer-social-link"><i class="fa-brands fa-invision"></i></a></li>
             </ul>
         </div>
+        <div class="footer-subscribe-block">
+            <h3 class="footer-subscribe-title">Підпишіться на розсилку</h3>
+            <form class="footer-form">
+                <input type="email" name="subscribe-email" class="footer-form-input" placeholder="E-mail" required>
+                <button type="submit" class="footer-form-button">
+                    Підписатися
+                    <i class="fa-solid fa-paper-plane footer-form-icon"></i>
+                </button>
+            </form>
+        </div>
     </div>
 </footer>
 
+<div class="backdrop is-hidden" data-modal>
+    <div class="modal">
+        <button type="button" class="modal-close-btn" data-modal-close>&times;</button>
+        <form class="modal-form">
+            <p class="modal-form-title">Залиште свої дані, ми вам передзвонимо</p>
+            
+            <label class="modal-form-label">
+                Ім'я
+                <span class="modal-form-input-wrapper">
+                    <input type="text" name="user-name" class="modal-form-input" required>
+                    <i class="fa-solid fa-user modal-form-icon"></i>
+                </span>
+            </label>
+
+            <label class="modal-form-label">
+                Телефон
+                 <span class="modal-form-input-wrapper">
+                    <input type="tel" name="user-phone" class="modal-form-input" required>
+                    <i class="fa-solid fa-phone modal-form-icon"></i>
+                </span>
+            </label>
+
+            <label class="modal-form-label">
+                Пошта
+                 <span class="modal-form-input-wrapper">
+                    <input type="email" name="user-email" class="modal-form-input" required>
+                    <i class="fa-solid fa-envelope modal-form-icon"></i>
+                </span>
+            </label>
+
+            <label class="modal-form-label">
+                Коментар
+                <textarea name="user-comment" class="modal-form-textarea" placeholder="Введіть текст"></textarea>
+            </label>
+            
+            <label class="modal-form-checkbox-label">
+                <input type="checkbox" name="privacy-policy" class="visually-hidden modal-form-checkbox" required>
+                <span class="modal-form-custom-checkbox">
+                    <i class="fa-solid fa-check modal-form-checkbox-icon"></i>
+                </span>
+                <span>Погоджуюся з розсилкою та приймаю <a href="#" class="modal-form-policy-link">Умови договору</a></span>
+            </label>
+
+            <button type="submit" class="modal-form-submit-btn">Відправити</button>
+        </form>
+    </div>
+</div>
+
+<script src="./js/modal.js"></script>
 </body>
 </html>
