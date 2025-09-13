@@ -3,16 +3,16 @@
     --primary-text-color: #212121;
     --secondary-text-color: #757575;
     --accent-color: #2196F3;
-    --white-color: #FFFFFF;
-    --dark-bg-color: #2F303A;
-    --light-grey-bg: #F5F4FA;
-    --icon-color: #AFB1B8;
+    --primary-white: #FFFFFF;
+    --background-dark: #2F303A;
+    --background-secondary: #F5F4FA;
+    --icon-primary-color: #AFB1B8;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     color: var(--primary-text-color);
-    background-color: var(--white-color);
+    background-color: var(--primary-white);
     letter-spacing: 0.03em;
 }
 
@@ -67,16 +67,15 @@ img {
     font-weight: 700;
     font-size: 26px;
     line-height: 1.19;
-}
-.logo-web {
     color: var(--accent-color);
 }
-.logo-studio-header {
+.header .logo__studio {
     color: #000000;
 }
-.logo-studio-footer {
-    color: var(--white-color);
+.footer .logo__studio {
+    color: var(--primary-white);
 }
+
 
 /* --- HEADER --- */
 .header {
@@ -171,7 +170,7 @@ img {
     line-height: 1.36;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--white-color);
+    color: var(--primary-white);
 }
 .hero-button {
     cursor: pointer;
@@ -180,7 +179,7 @@ img {
     font-size: 16px;
     line-height: 1.88;
     letter-spacing: 0.06em;
-    color: var(--white-color);
+    color: var(--primary-white);
     background-color: var(--accent-color);
     border: none;
     border-radius: 4px;
@@ -209,7 +208,7 @@ img {
     align-items: center;
     justify-content: center;
     height: 120px;
-    background-color: var(--light-grey-bg);
+    background-color: var(--background-secondary);
     border-radius: 4px;
     margin-bottom: 30px;
 }
@@ -258,7 +257,7 @@ img {
     margin: 0;
     padding: 27px 0;
     background-color: rgba(47, 48, 58, 0.8);
-    color: var(--white-color);
+    color: var(--primary-white);
     text-align: center;
     font-weight: 700;
     font-size: 14px;
@@ -268,7 +267,7 @@ img {
 
 /* --- TEAM --- */
 .team.section {
-    background-color: var(--light-grey-bg);
+    background-color: var(--background-secondary);
 }
 .team-list {
     display: flex;
@@ -276,7 +275,7 @@ img {
 }
 .team-item {
     flex-basis: calc((100% - 90px) / 4);
-    background: var(--white-color);
+    background: var(--primary-white);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
     text-align: center;
@@ -308,7 +307,7 @@ img {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    color: var(--icon-color);
+    color: var(--icon-primary-color);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .fa-brands {
@@ -317,7 +316,7 @@ img {
 .social-link:hover,
 .social-link:focus {
     background-color: var(--accent-color);
-    color: var(--white-color);
+    color: var(--primary-white);
 }
 
 /* --- CLIENTS --- */
@@ -333,9 +332,9 @@ img {
     align-items: center;
     justify-content: center;
     height: 92px;
-    border: 1px solid var(--icon-color);
+    border: 1px solid var(--icon-primary-color);
     border-radius: 4px;
-    color: var(--icon-color);
+    color: var(--icon-primary-color);
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-link:hover,
@@ -350,7 +349,7 @@ img {
 
 /* --- FOOTER --- */
 .footer {
-    background-color: var(--dark-bg-color);
+    background-color: var(--background-dark);
     padding: 60px 0;
 }
 .footer-container {
@@ -370,7 +369,7 @@ img {
 .footer-address-location {
     font-size: 14px;
     line-height: 1.71;
-    color: var(--white-color);
+    color: var(--primary-white);
     margin: 0;
 }
 .footer-item:not(:last-child) {
@@ -395,11 +394,11 @@ img {
     font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
-    color: var(--white-color);
+    color: var(--primary-white);
 }
 .footer-social-link {
     background-color: rgba(255, 255, 255, 0.1);
-    color: var(--white-color);
+    color: var(--primary-white);
 }
 .footer-subscribe-title {
     margin: 0 0 20px;
@@ -407,7 +406,7 @@ img {
     font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
-    color: var(--white-color);
+    color: var(--primary-white);
 }
 .footer-form {
     display: flex;
@@ -421,7 +420,7 @@ img {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
     background-color: transparent;
-    color: var(--white-color);
+    color: var(--primary-white);
     font-size: 16px;
 }
 .footer-form-input::placeholder {
@@ -438,7 +437,7 @@ img {
     font-size: 16px;
     line-height: 1.88;
     letter-spacing: 0.06em;
-    color: var(--white-color);
+    color: var(--primary-white);
     background-color: var(--accent-color);
     border: none;
     border-radius: 4px;
@@ -477,7 +476,7 @@ img {
     transform: translate(-50%, -50%);
     width: 528px;
     min-height: 581px;
-    background-color: var(--white-color);
+    background-color: var(--primary-white);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     padding: 40px;
@@ -489,7 +488,7 @@ img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: var(--white-color);
+    background-color: var(--primary-white);
     border: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
     font-size: 20px;
@@ -590,7 +589,7 @@ img {
 }
 .modal-form-checkbox-icon {
     font-size: 10px;
-    color: var(--white-color);
+    color: var(--primary-white);
 }
 .modal-form-checkbox:checked + .modal-form-custom-checkbox {
     background-color: var(--accent-color);
@@ -608,7 +607,7 @@ img {
     font-size: 16px;
     line-height: 1.88;
     letter-spacing: 0.06em;
-    color: var(--white-color);
+    color: var(--primary-white);
     background-color: var(--accent-color);
     border: none;
     border-radius: 4px;
