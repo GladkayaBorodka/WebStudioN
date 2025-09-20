@@ -69,10 +69,10 @@ img {
     line-height: 1.19;
     color: var(--accent-color);
 }
-.header .logo__studio {
+.header .logo-studio {
     color: #000000;
 }
-.footer .logo__studio {
+.footer .logo-studio-footer {
     color: var(--primary-white);
 }
 
