@@ -21,7 +21,7 @@ body.no-scroll {
 }
 
 .container {
-    width: 1200px;
+    width: 1170px;
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
@@ -79,6 +79,8 @@ img {
 
 /* --- HEADER --- */
 .header {
+    padding-top: 32px;
+    padding-bottom: 32px;
     border-bottom: 1px solid #ECECEC;
 }
 .header-container {
@@ -95,8 +97,6 @@ img {
 .header-nav-link {
     position: relative;
     display: block;
-    padding-top: 32px;
-    padding-bottom: 32px;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
