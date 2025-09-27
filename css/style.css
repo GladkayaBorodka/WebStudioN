@@ -205,6 +205,7 @@ img {
     margin-bottom: 30px;
 }
 
+/* Додаємо зображення через псевдоелемент ::before */
 .details-icon-wrapper::before {
     content: '';
     display: block;
@@ -215,6 +216,7 @@ img {
     background-size: contain;
 }
 
+/* Встановлюємо конкретне зображення для кожного елемента */
 .details-item:nth-child(1) .details-icon-wrapper::before {
     background-image: url('../img/antenna.png');
 }
@@ -227,7 +229,6 @@ img {
 .details-item:nth-child(4) .details-icon-wrapper::before {
     background-image: url('../img/astronaut.png');
 }
-
 
 .details-heading {
     margin: 0 0 10px;
