@@ -124,6 +124,7 @@ img {
 
 .header-contact {
     margin-left: auto;
+    font-style: normal; 
 }
 .header-contact-list {
     display: flex;
@@ -195,7 +196,10 @@ img {
 .details-item {
     flex-basis: calc((100% - 90px) / 4);
 }
-.details-icon-wrapper {
+
+/* ВИПРАВЛЕНО: іконки додано через псевдоелемент до li */
+.details-item::before {
+    content: '';
     display: flex;
     align-items: center;
     justify-content: center;
@@ -203,30 +207,22 @@ img {
     background-color: var(--background-secondary);
     border-radius: 4px;
     margin-bottom: 30px;
-}
-
-/* Додаємо зображення через псевдоелемент ::before */
-.details-icon-wrapper::before {
-    content: '';
-    display: block;
-    width: 70px;
-    height: 70px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: 70px 70px; /* Розмір іконки */
 }
 
 /* Встановлюємо конкретне зображення для кожного елемента */
-.details-item:nth-child(1) .details-icon-wrapper::before {
+.details-item:nth-child(1)::before {
     background-image: url('../img/antenna.png');
 }
-.details-item:nth-child(2) .details-icon-wrapper::before {
+.details-item:nth-child(2)::before {
     background-image: url('../img/clock.png');
 }
-.details-item:nth-child(3) .details-icon-wrapper::before {
+.details-item:nth-child(3)::before {
     background-image: url('../img/diagram.png');
 }
-.details-item:nth-child(4) .details-icon-wrapper::before {
+.details-item:nth-child(4)::before {
     background-image: url('../img/astronaut.png');
 }
 
