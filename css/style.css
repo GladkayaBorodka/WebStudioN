@@ -196,23 +196,19 @@ img {
 .details-item {
     flex-basis: calc((100% - 90px) / 4);
 }
-
-/* ВИПРАВЛЕНО: іконки додано через псевдоелемент до li */
 .details-item::before {
     content: '';
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 270px;
     height: 120px;
     background-color: var(--background-secondary);
     border-radius: 4px;
     margin-bottom: 30px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 70px 70px; /* Розмір іконки */
 }
-
-/* Встановлюємо конкретне зображення для кожного елемента */
 .details-item:nth-child(1)::before {
     background-image: url('../img/antenna.png');
 }
