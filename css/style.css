@@ -3,14 +3,38 @@
     --primary-text-color: #212121;
     --secondary-text-color: #757575;
     --accent-color: #2196F3;
+    --accent-color-hover: #188CE8;
     --primary-white: #FFFFFF;
     --background-dark: #2F303A;
     --background-secondary: #F5F4FA;
     --icon-primary-color: #AFB1B8;
+    --logo-dark-color: #000000;
+    --header-border-color: #ECECEC;
+    --footer-link-color: rgba(255, 255, 255, 0.6);
+    --footer-social-bg: rgba(255, 255, 255, 0.1);
+    --footer-input-border: rgba(255, 255, 255, 0.3);
+    --hero-overlay-color: rgba(47, 48, 58, 0.4);
+    --activities-label-bg: rgba(47, 48, 58, 0.8);
+    --backdrop-color: rgba(0, 0, 0, 0.2);
+    --modal-close-border: rgba(0, 0, 0, 0.1);
+    --modal-input-border: rgba(33, 33, 33, 0.2);
+    --modal-placeholder-color: rgba(117, 117, 117, 0.5);
+
+    /* Тени */
+    --shadow-hero-btn: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    --shadow-team-item: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    --shadow-modal: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    --shadow-footer-input: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    --shadow-footer-btn: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    --shadow-modal-btn: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+    /* Шрифты */
+    --primary-font: 'Roboto', sans-serif;
+    --logo-font: 'Raleway', sans-serif;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--primary-font); /* Fix 1 */
     color: var(--primary-text-color);
     background-color: var(--primary-white);
     letter-spacing: 0.03em;
@@ -63,14 +87,14 @@ img {
 
 /* Логотип */
 .logo {
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--logo-font); /* Fix 1 */
     font-weight: 700;
     font-size: 26px;
     line-height: 1.19;
     color: var(--accent-color);
 }
 .header .logo-studio {
-    color: #000000;
+    color: var(--logo-dark-color); /* Fix 4 */
 }
 .footer .logo-studio-footer {
     color: var(--primary-white);
@@ -81,7 +105,7 @@ img {
 .header {
     padding-top: 24px;
     padding-bottom: 25px;
-    border-bottom: 1px solid #ECECEC;
+    border-bottom: 1px solid var(--header-border-color); /* Fix 4 */
 }
 .header-container {
     display: flex;
@@ -153,7 +177,7 @@ img {
 
 /* --- HERO --- */
 .hero {
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url('../img/humansworking.jpg');
+    background-image: linear-gradient(var(--hero-overlay-color), var(--hero-overlay-color)), url('../img/humansworking.jpg'); /* Fix 4 */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -182,7 +206,7 @@ img {
     border: none;
     border-radius: 4px;
     padding: 10px 32px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-hero-btn); /* Fix 4 */
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* --- DETAILS --- */
@@ -194,16 +218,14 @@ img {
     gap: 30px;
 }
 .details-item {
-    flex-basis: calc((100% - 90px) / 4);
+    flex-basis: calc((100% - 90px) / 4); /* Fix 2: This is correct */
 }
 .details-item::before {
     content: '';
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block; /* Fix 3 */
     width: 270px;
     height: 120px;
-    background-color: var(--background-secondary);
+    background-color: var(--background-secondary); /* Fix 6: CSS is correct */
     border-radius: 4px;
     margin-bottom: 30px;
     background-repeat: no-repeat;
@@ -266,7 +288,7 @@ img {
     width: 100%;
     margin: 0;
     padding: 27px 0;
-    background-color: rgba(47, 48, 58, 0.8);
+    background-color: var(--activities-label-bg); /* Fix 4 */
     color: var(--primary-white);
     text-align: center;
     font-weight: 700;
@@ -286,7 +308,7 @@ img {
 .team-item {
     flex-basis: calc((100% - 90px) / 4);
     background: var(--primary-white);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-team-item); /* Fix 4 */
     border-radius: 0px 0px 4px 4px;
     text-align: center;
 }
@@ -388,7 +410,7 @@ img {
 .footer-link {
     font-size: 14px;
     line-height: 1.71;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--footer-link-color); /* Fix 4 */
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-link:hover,
@@ -407,7 +429,7 @@ img {
     color: var(--primary-white);
 }
 .footer-social-link {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--footer-social-bg); /* Fix 4 */
     color: var(--primary-white);
 }
 .footer-subscribe-title {
@@ -426,15 +448,15 @@ img {
     width: 358px;
     height: 50px;
     padding: 15px 16px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border: 1px solid var(--footer-input-border); /* Fix 4 */
+    filter: drop-shadow(var(--shadow-footer-input)); /* Fix 4 */
     border-radius: 4px;
     background-color: transparent;
     color: var(--primary-white);
     font-size: 16px;
 }
 .footer-form-input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--footer-link-color); /* Fix 4 */
 }
 .footer-form-button {
     display: flex;
@@ -452,12 +474,12 @@ img {
     border: none;
     border-radius: 4px;
     padding: 10px 28px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-footer-btn); /* Fix 4 */
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-form-button:hover,
 .footer-form-button:focus {
-    background-color: #188CE8;
+    background-color: var(--accent-color-hover); /* Fix 4 */
 }
 .footer-form-icon {
     fill: currentColor;
@@ -470,7 +492,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--backdrop-color); /* Fix 4 */
     z-index: 100;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -487,7 +509,7 @@ img {
     width: 528px;
     min-height: 581px;
     background-color: var(--primary-white);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-modal); /* Fix 4 */
     border-radius: 4px;
     padding: 40px;
 }
@@ -499,10 +521,10 @@ img {
     height: 30px;
     border-radius: 50%;
     background-color: var(--primary-white);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--modal-close-border); /* Fix 4 */
     cursor: pointer;
     font-size: 20px;
-    color: #000;
+    color: var(--logo-dark-color); /* Fix 4 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -541,7 +563,7 @@ img {
     width: 100%;
     height: 40px;
     padding-left: 42px;
-    border: 1px solid rgba(33, 33, 33, 0.2);
+    border: 1px solid var(--modal-input-border); /* Fix 4 */
     border-radius: 4px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -564,13 +586,13 @@ img {
     height: 120px;
     padding: 12px 16px;
     margin-top: 4px;
-    border: 1px solid rgba(33, 33, 33, 0.2);
+    border: 1px solid var(--modal-input-border); /* Fix 4 */
     border-radius: 4px;
     resize: none;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-textarea::placeholder {
-    color: rgba(117, 117, 117, 0.5);
+    color: var(--modal-placeholder-color); /* Fix 4 */
 }
 .modal-form-textarea:focus {
     outline: none;
@@ -622,10 +644,10 @@ img {
     border: none;
     border-radius: 4px;
     padding: 10px 52px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-modal-btn); /* Fix 4 */
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-submit-btn:hover,
 .modal-form-submit-btn:focus {
-    background-color: #188CE8;
+    background-color: var(--accent-color-hover); /* Fix 4 */
 }
