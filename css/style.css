@@ -33,8 +33,15 @@
     --logo-font: 'Raleway', sans-serif;
 }
 
+/* Глобальный сброс box-sizing для правильного расчета ширины */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: var(--primary-font); /* Fix 1 */
+    font-family: var(--primary-font);
     color: var(--primary-text-color);
     background-color: var(--primary-white);
     letter-spacing: 0.03em;
@@ -44,8 +51,9 @@ body.no-scroll {
     overflow: hidden;
 }
 
+/* FIX: Ширина контейнера увеличена до 1200px (1200 - 30 padding = 1170 content) */
 .container {
-    width: 1170px;
+    width: 1200px;
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
@@ -87,14 +95,14 @@ img {
 
 /* Логотип */
 .logo {
-    font-family: var(--logo-font); /* Fix 1 */
+    font-family: var(--logo-font);
     font-weight: 700;
     font-size: 26px;
     line-height: 1.19;
     color: var(--accent-color);
 }
 .header .logo-studio {
-    color: var(--logo-dark-color); /* Fix 4 */
+    color: var(--logo-dark-color);
 }
 .footer .logo-studio-footer {
     color: var(--primary-white);
@@ -105,7 +113,7 @@ img {
 .header {
     padding-top: 24px;
     padding-bottom: 25px;
-    border-bottom: 1px solid var(--header-border-color); /* Fix 4 */
+    border-bottom: 1px solid var(--header-border-color);
 }
 .header-container {
     display: flex;
@@ -177,7 +185,8 @@ img {
 
 /* --- HERO --- */
 .hero {
-    background-image: linear-gradient(var(--hero-overlay-color), var(--hero-overlay-color)), url('../img/humansworking.jpg'); /* Fix 4 */
+    /* Фон накладывается программно, убедись что иконки прозрачные */
+    background-image: linear-gradient(var(--hero-overlay-color), var(--hero-overlay-color)), url('../img/humansworking.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -206,7 +215,7 @@ img {
     border: none;
     border-radius: 4px;
     padding: 10px 32px;
-    box-shadow: var(--shadow-hero-btn); /* Fix 4 */
+    box-shadow: var(--shadow-hero-btn);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* --- DETAILS --- */
@@ -218,30 +227,30 @@ img {
     gap: 30px;
 }
 .details-item {
-    flex-basis: calc((100% - 90px) / 4); /* Fix 2: This is correct */
+    flex-basis: calc((100% - 90px) / 4);
 }
 .details-item::before {
     content: '';
-    display: block; /* Fix 3 */
+    display: block;
     width: 270px;
     height: 120px;
-    background-color: var(--background-secondary); /* Fix 6: CSS is correct */
+    background-color: var(--background-secondary);
     border-radius: 4px;
     margin-bottom: 30px;
     background-repeat: no-repeat;
     background-position: center;
 }
 .details-item:nth-child(1)::before {
-    background-image: url('../img/antenna.png');
+    background-image: url('../img/antennas.png');
 }
 .details-item:nth-child(2)::before {
-    background-image: url('../img/clock.png');
+    background-image: url('../img/clocks.png');
 }
 .details-item:nth-child(3)::before {
-    background-image: url('../img/diagram.png');
+    background-image: url('../img/diagrams.png');
 }
 .details-item:nth-child(4)::before {
-    background-image: url('../img/astronaut.png');
+    background-image: url('../img/astronauts.png');
 }
 
 .details-heading {
@@ -288,7 +297,7 @@ img {
     width: 100%;
     margin: 0;
     padding: 27px 0;
-    background-color: var(--activities-label-bg); /* Fix 4 */
+    background-color: var(--activities-label-bg);
     color: var(--primary-white);
     text-align: center;
     font-weight: 700;
@@ -308,7 +317,7 @@ img {
 .team-item {
     flex-basis: calc((100% - 90px) / 4);
     background: var(--primary-white);
-    box-shadow: var(--shadow-team-item); /* Fix 4 */
+    box-shadow: var(--shadow-team-item);
     border-radius: 0px 0px 4px 4px;
     text-align: center;
 }
@@ -410,7 +419,7 @@ img {
 .footer-link {
     font-size: 14px;
     line-height: 1.71;
-    color: var(--footer-link-color); /* Fix 4 */
+    color: var(--footer-link-color);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-link:hover,
@@ -429,7 +438,7 @@ img {
     color: var(--primary-white);
 }
 .footer-social-link {
-    background-color: var(--footer-social-bg); /* Fix 4 */
+    background-color: var(--footer-social-bg);
     color: var(--primary-white);
 }
 .footer-subscribe-title {
@@ -448,15 +457,15 @@ img {
     width: 358px;
     height: 50px;
     padding: 15px 16px;
-    border: 1px solid var(--footer-input-border); /* Fix 4 */
-    filter: drop-shadow(var(--shadow-footer-input)); /* Fix 4 */
+    border: 1px solid var(--footer-input-border);
+    filter: drop-shadow(var(--shadow-footer-input));
     border-radius: 4px;
     background-color: transparent;
     color: var(--primary-white);
     font-size: 16px;
 }
 .footer-form-input::placeholder {
-    color: var(--footer-link-color); /* Fix 4 */
+    color: var(--footer-link-color);
 }
 .footer-form-button {
     display: flex;
@@ -474,12 +483,12 @@ img {
     border: none;
     border-radius: 4px;
     padding: 10px 28px;
-    box-shadow: var(--shadow-footer-btn); /* Fix 4 */
+    box-shadow: var(--shadow-footer-btn);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-form-button:hover,
 .footer-form-button:focus {
-    background-color: var(--accent-color-hover); /* Fix 4 */
+    background-color: var(--accent-color-hover);
 }
 .footer-form-icon {
     fill: currentColor;
@@ -492,7 +501,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--backdrop-color); /* Fix 4 */
+    background-color: var(--backdrop-color);
     z-index: 100;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -509,7 +518,7 @@ img {
     width: 528px;
     min-height: 581px;
     background-color: var(--primary-white);
-    box-shadow: var(--shadow-modal); /* Fix 4 */
+    box-shadow: var(--shadow-modal);
     border-radius: 4px;
     padding: 40px;
 }
@@ -521,10 +530,10 @@ img {
     height: 30px;
     border-radius: 50%;
     background-color: var(--primary-white);
-    border: 1px solid var(--modal-close-border); /* Fix 4 */
+    border: 1px solid var(--modal-close-border);
     cursor: pointer;
     font-size: 20px;
-    color: var(--logo-dark-color); /* Fix 4 */
+    color: var(--logo-dark-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -563,7 +572,7 @@ img {
     width: 100%;
     height: 40px;
     padding-left: 42px;
-    border: 1px solid var(--modal-input-border); /* Fix 4 */
+    border: 1px solid var(--modal-input-border);
     border-radius: 4px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -586,13 +595,13 @@ img {
     height: 120px;
     padding: 12px 16px;
     margin-top: 4px;
-    border: 1px solid var(--modal-input-border); /* Fix 4 */
+    border: 1px solid var(--modal-input-border);
     border-radius: 4px;
     resize: none;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-textarea::placeholder {
-    color: var(--modal-placeholder-color); /* Fix 4 */
+    color: var(--modal-placeholder-color);
 }
 .modal-form-textarea:focus {
     outline: none;
@@ -644,10 +653,10 @@ img {
     border: none;
     border-radius: 4px;
     padding: 10px 52px;
-    box-shadow: var(--shadow-modal-btn); /* Fix 4 */
+    box-shadow: var(--shadow-modal-btn);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-submit-btn:hover,
 .modal-form-submit-btn:focus {
-    background-color: var(--accent-color-hover); /* Fix 4 */
+    background-color: var(--accent-color-hover);
 }

@@ -27,15 +27,23 @@
     --logo-font: 'Raleway', sans-serif;
 }
 
+/* Глобальный сброс box-sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: var(--primary-font); /* Fix 1 */
+    font-family: var(--primary-font);
     color: var(--primary-text-color);
     background-color: var(--primary-white);
     letter-spacing: 0.03em;
 }
 
+/* FIX: Ширина контейнера 1200px */
 .container {
-    width: 1170px;
+    width: 1200px;
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
@@ -77,14 +85,14 @@ img {
 
 /* Логотип */
 .logo {
-    font-family: var(--logo-font); /* Fix 1 */
+    font-family: var(--logo-font); 
     font-weight: 700;
     font-size: 26px;
     line-height: 1.19;
     color: var(--accent-color);
 }
 .header .logo-studio {
-    color: var(--logo-dark-color); /* Fix 4 */
+    color: var(--logo-dark-color);
 }
 .footer .logo-studio-footer {
     color: var(--primary-white);
@@ -94,7 +102,7 @@ img {
 .header {
     padding-top: 24px;
     padding-bottom: 25px;
-    border-bottom: 1px solid var(--header-border-color); /* Fix 4 */
+    border-bottom: 1px solid var(--header-border-color);
 }
 .header-container {
     display: flex;
@@ -187,11 +195,22 @@ img {
                 color 250ms cubic-bezier(0.4, 0, 0.2, 1),
                 box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* FIX: Первая кнопка обычно шире (если нужно) */
+/* Предполагается структура <ul><li><button> */
+.filters > li:first-child .filters__button {
+    padding: 6px 25px;
+}
+/* Если кнопки лежат просто в диве, сработает это: */
+.filters__button:first-child {
+    padding: 6px 25px;
+}
+
 .filters__button:hover,
 .filters__button:focus {
     background-color: var(--accent-color);
     color: var(--primary-white);
-    box-shadow: var(--shadow-filter-btn); /* Fix 4 */
+    box-shadow: var(--shadow-filter-btn);
 }
 
 /* --- PORTFOLIO GRID --- */
@@ -204,14 +223,14 @@ img {
     flex-basis: calc((100% - 60px) / 3);
 }
 .portfolio-item-link {
-    display: flex; /* Fix 5: for equal height */
-    flex-direction: column; /* Fix 5: for equal height */
-    height: 100%; /* Fix 5: for equal height */
+    display: flex; 
+    flex-direction: column; 
+    height: 100%; 
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-item-link:hover,
 .portfolio-item-link:focus {
-    box-shadow: var(--shadow-portfolio-item); /* Fix 4 */
+    box-shadow: var(--shadow-portfolio-item);
 }
 .portfolio-item-link:hover .portfolio-item-overlay,
 .portfolio-item-link:focus .portfolio-item-overlay {
@@ -234,7 +253,7 @@ img {
     width: 100%;
     height: 100%;
     padding: 63px 24px;
-    background-color: var(--accent-color-overlay); /* Fix 4 */
+    background-color: var(--accent-color-overlay);
     transform: translateY(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -245,9 +264,9 @@ img {
     margin: 0;
 }
 .portfolio-item-description {
-    flex-grow: 1; /* Fix 5: for equal height */
+    flex-grow: 1; 
     padding: 20px 24px;
-    border: 1px solid var(--portfolio-border-color); /* Fix 4 */
+    border: 1px solid var(--portfolio-border-color);
     border-top: none;
 }
 .portfolio-title {
@@ -255,7 +274,7 @@ img {
     font-weight: 700;
     font-size: 18px;
     line-height: 2;
-    letter-spacing: 0.03em; /* Fix 5: was 0.06em */
+    letter-spacing: 0.03em;
     color: var(--primary-text-color);
 }
 .portfolio-category {
@@ -297,7 +316,7 @@ img {
 .footer-link {
     font-size: 14px;
     line-height: 1.71;
-    color: var(--footer-link-color); /* Fix 4 */
+    color: var(--footer-link-color);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-link:hover,
@@ -336,7 +355,7 @@ img {
     color: var(--primary-white);
 }
 .footer-social-link {
-    background-color: var(--footer-social-bg); /* Fix 4 */
+    background-color: var(--footer-social-bg);
     color: var(--primary-white);
 }
 .footer-subscribe-title {
@@ -355,15 +374,15 @@ img {
     width: 358px;
     height: 50px;
     padding: 15px 16px;
-    border: 1px solid var(--footer-input-border); /* Fix 4 */
-    filter: drop-shadow(var(--shadow-footer-input)); /* Fix 4 */
+    border: 1px solid var(--footer-input-border);
+    filter: drop-shadow(var(--shadow-footer-input));
     border-radius: 4px;
     background-color: transparent;
     color: var(--primary-white);
     font-size: 16px;
 }
 .footer-form-input::placeholder {
-    color: var(--footer-link-color); /* Fix 4 */
+    color: var(--footer-link-color);
 }
 .footer-form-button {
     display: flex;
@@ -381,12 +400,12 @@ img {
     border: none;
     border-radius: 4px;
     padding: 10px 28px;
-    box-shadow: var(--shadow-footer-btn); /* Fix 4 */
+    box-shadow: var(--shadow-footer-btn);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-form-button:hover,
 .footer-form-button:focus {
-    background-color: var(--accent-color-hover); /* Fix 4 */
+    background-color: var(--accent-color-hover); 
 }
 .footer-form-icon {
     fill: currentColor;
