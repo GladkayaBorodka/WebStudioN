@@ -179,6 +179,7 @@ img {
     gap: 8px;
     margin-bottom: 50px;
 }
+
 .filters__button {
     cursor: pointer;
     font-family: inherit;
@@ -196,12 +197,6 @@ img {
                 box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* FIX: Первая кнопка обычно шире (если нужно) */
-/* Предполагается структура <ul><li><button> */
-.filters > li:first-child .filters__button {
-    padding: 6px 25px;
-}
-/* Если кнопки лежат просто в диве, сработает это: */
 .filters__button:first-child {
     padding: 6px 25px;
 }
@@ -212,6 +207,7 @@ img {
     color: var(--primary-white);
     box-shadow: var(--shadow-filter-btn);
 }
+
 
 /* --- PORTFOLIO GRID --- */
 .portfolio-list {
