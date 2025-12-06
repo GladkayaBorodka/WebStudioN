@@ -41,7 +41,7 @@ body {
     letter-spacing: 0.03em;
 }
 
-/* FIX: Ширина контейнера 1200px */
+/* Container */
 .container {
     width: 1200px;
     padding-left: 15px;
@@ -85,7 +85,7 @@ img {
 
 /* Логотип */
 .logo {
-    font-family: var(--logo-font); 
+    font-family: var(--logo-font);
     font-weight: 700;
     font-size: 26px;
     line-height: 1.19;
@@ -136,7 +136,7 @@ img {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -33px; 
+    bottom: -33px;
     width: 100%;
     height: 4px;
     background-color: var(--accent-color);
@@ -145,7 +145,7 @@ img {
 
 .header-contact {
     margin-left: auto;
-    font-style: normal; 
+    font-style: normal;
 }
 .header-contact-list {
     display: flex;
@@ -191,12 +191,14 @@ img {
     background-color: var(--background-secondary);
     border: none;
     border-radius: 4px;
+    /* У ВСІХ ІНШИХ padding: 6px 22px; */
     padding: 6px 22px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
                 color 250ms cubic-bezier(0.4, 0, 0.2, 1),
                 box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ЦЕ ТІЛЬКИ У ПЕРШОЇ */
 .filters__button:first-child {
     padding: 6px 25px;
 }
@@ -219,9 +221,9 @@ img {
     flex-basis: calc((100% - 60px) / 3);
 }
 .portfolio-item-link {
-    display: flex; 
-    flex-direction: column; 
-    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-item-link:hover,
@@ -260,7 +262,7 @@ img {
     margin: 0;
 }
 .portfolio-item-description {
-    flex-grow: 1; 
+    flex-grow: 1;
     padding: 20px 24px;
     border: 1px solid var(--portfolio-border-color);
     border-top: none;
@@ -269,8 +271,8 @@ img {
     margin: 0 0 4px;
     font-weight: 700;
     font-size: 18px;
-    line-height: 2;
-    letter-spacing: 0.03em;
+    line-height: 2.0;
+    letter-spacing: 0.06em; 
     color: var(--primary-text-color);
 }
 .portfolio-category {
@@ -281,7 +283,7 @@ img {
 }
 
 
-/* --- FOOTER --- */
+/* --- FOOTER (Синхронізовано з головною сторінкою) --- */
 .footer {
     background-color: var(--background-dark);
     padding: 60px 0;
@@ -330,6 +332,8 @@ img {
     text-transform: uppercase;
     color: var(--primary-white);
 }
+
+/* Виправлені стилі для соціальних іконок у футері */
 .social-links {
     display: flex;
     justify-content: center;
@@ -354,6 +358,10 @@ img {
     background-color: var(--footer-social-bg);
     color: var(--primary-white);
 }
+.fa-brands {
+    fill: currentColor;
+}
+
 .footer-subscribe-title {
     margin: 0 0 20px;
     font-weight: 700;
@@ -401,7 +409,7 @@ img {
 }
 .footer-form-button:hover,
 .footer-form-button:focus {
-    background-color: var(--accent-color-hover); 
+    background-color: var(--accent-color-hover);
 }
 .footer-form-icon {
     fill: currentColor;
