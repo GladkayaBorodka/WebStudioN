@@ -33,7 +33,6 @@
     --logo-font: 'Raleway', sans-serif;
 }
 
-/* Глобальный сброс box-sizing для правильного расчета ширины */
 *,
 *::before,
 *::after {
@@ -51,9 +50,8 @@ body.no-scroll {
     overflow: hidden;
 }
 
-/* FIX: Ширина контейнера увеличена до 1200px (1200 - 30 padding = 1170 content) */
 .container {
-    width: 1200px;
+    width: 1600px;
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
@@ -185,7 +183,6 @@ img {
 
 /* --- HERO --- */
 .hero {
-    /* Фон накладывается программно, убедись что иконки прозрачные */
     background-image: linear-gradient(var(--hero-overlay-color), var(--hero-overlay-color)), url('../img/humansworking.jpg');
     background-repeat: no-repeat;
     background-position: center;
