@@ -1,0 +1,50 @@
+@use '../utils/placeholders' as *;
+@use '../utils/variables' as *;
+
+body {
+  font-family: $main-family;
+  color: $txt-color;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 1200px;
+}
+
+.logo {
+  display: flex;
+  font-family: $second-family;
+  font-size: 26px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.logo-accent {
+  color: $accent-color;
+}
+
+
+@media screen and (max-width: 1199px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 480px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .container {
+    max-width: 100%;
+  }
+}
