@@ -51,10 +51,6 @@
 		height: 3px;
 		border-radius: 4px;
 		background-color: $accent-color;
-
-		@media (max-width: 1199px) {
-			bottom: -35px;
-		}
 	}
 
 	&__contacts {
@@ -95,48 +91,26 @@
 	&__menu {
 		background-color: transparent;
 		border: none;
-		display: none;
+		display: none; 
 	}
 }
 
 @media (max-width: 1199px) {
 	.header {
 		&__logo {
-			padding-right: 87px;
-		}
-
-		&__contacts {
-			flex-direction: column;
-			gap: 10px;
-
-			&-link {
-				font-size: 12px;
-			}
-		}
-
-		&__mail-icon {
-			width: 14px;
-			height: 10px;
-		}
-
-		&__phone-icon {
-			width: 10px;
-			height: 14px;
-		}
-	}
-}
-
-@media (max-width: 767px) {
-	.header {
-		&__logo {
 			padding-right: 0;
 		}
+
 		&__nav {
-			display: none;
+			display: none; 
 		}
 
 		&__menu {
-			display: block;
+			display: block; 
+		}
+
+		&__contacts {
+			display: none; 
 		}
 	}
 }

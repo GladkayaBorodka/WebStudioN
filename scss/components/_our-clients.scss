@@ -17,13 +17,18 @@
     justify-content: center;
   }
 
+  &__item {
+    width: calc((100% - 150px) / 6);
+  }
+
   &__link {
     border: 1px solid;
     border-color: $icons-color;
     border-radius: 4px;
-    padding: 16px 31px;
+    padding: 16px 0;
     display: flex;
     justify-content: center;
+    width: 100%;
 
     &:hover {
       border-color: $accent-color;
@@ -46,22 +51,16 @@
     padding-top: 60px;
     padding-bottom: 60px;
 
-    &__list {
-      row-gap: 30px;
-    }
-
-    &__link {
-      padding: 16px 60px;
-      max-width: 226px;
+    &__item {
+      width: calc((100% - 30px) / 2); 
     }
   }
 }
 
 @media (max-width: 767px) {
   .our-clients {
-    &__link {
-      padding: 16px 52px;
-      max-width: 210px;
+    &__item {
+      width: calc((100% - 30px) / 2); 
     }
   }
 }
